@@ -30,7 +30,7 @@ class Application
       item = req.params["item"]
       if @@items.include?(item)
         @@cart << item
-        resp.write "added #{item}"
+        resp.write "added #{item}\n"
       else
         resp.write "We don't have that item"
       end
@@ -43,7 +43,7 @@ class Application
     if @@items.include?(search_term)
       return "#{search_term} is one of our items"
     else
-      return "Couldn't find #{search_term}"
+      return "Couldn't find #{search_term}\n"
     end
   end
 end
